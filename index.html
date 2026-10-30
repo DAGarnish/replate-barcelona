@@ -1,0 +1,1053 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Replate Barcelona | UK car to Spanish plates in Catalonia</title>
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Replate Barcelona">
+<meta property="og:title" content="Replate Barcelona | UK car to Spanish plates in Catalonia">
+<meta property="og:description" content="We collect your car, sort the headlights, pass the import ITV, handle customs and tax, and bring it back on Spanish plates. Fixed, itemised quote.">
+<meta property="og:locale" content="en_GB">
+<meta name="theme-color" content="#1B3C9C">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<meta name="description" content="Get your UK or foreign car onto Spanish plates without leaving Catalonia. Collection, headlights, import ITV, customs and registration, with a fixed itemised quote.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: road-sign clarity. Full-width bands on a blue-tinted plate white, content in one 1120px column.
+   EU-plate blue is the single accent; UK-plate yellow is kept for highlights and the hero plate. */
+:root{
+  --paper:#F2F4F8;
+  --surface:#FFFFFF;
+  --ink:#0F1726;
+  --muted:#4B5567;
+  --rule:#D5DBE5;
+  --accent:#1B3C9C;
+  --accent-fill:#1B3C9C;
+  --accent-fill-hover:#14307F;
+  --on-accent:#FFFFFF;
+  --accent-soft:#E4EAF8;
+  --mark:#F6CA16;
+  --good:#16774A;
+  --warn:#9E470A;
+  --plate-white:#FBFBF8;
+  --plate-yellow:#F7CA16;
+  --plate-ink:#0A0A0A;
+  --plate-band:#1B3C9C;
+  --plate-band-ink:#FFFFFF;
+  --plate-stars:#F7CA16;
+  --plate-gloss:rgb(255 255 255 / .38);
+  --shadow:0 1px 2px rgb(15 23 38 / .06), 0 10px 30px rgb(15 23 38 / .08);
+  --font-display:"Barlow Condensed","Arial Narrow","Roboto Condensed",sans-serif;
+  --font-body:"Barlow","Segoe UI",system-ui,-apple-system,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --fs-small:.875rem;
+  --fs-body:1.0625rem;
+  --fs-lead:1.22rem;
+  --fs-h3:1.45rem;
+  --fs-h2:clamp(2rem,4vw,2.75rem);
+  --fs-h1:clamp(2.5rem,5.4vw,4.1rem);
+  --maxw:1120px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0B1019;
+    --surface:#121A27;
+    --ink:#E7ECF4;
+    --muted:#A3AEC1;
+    --rule:#263145;
+    --accent:#A8BDFF;
+    --accent-fill:#3C5DD3;
+    --accent-fill-hover:#4E6EE2;
+    --on-accent:#FFFFFF;
+    --accent-soft:#18223C;
+    --mark:rgb(247 202 22 / .34);
+    --good:#53C792;
+    --warn:#F2A262;
+    --shadow:0 1px 2px rgb(0 0 0 / .5), 0 10px 30px rgb(0 0 0 / .35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0B1019;
+  --surface:#121A27;
+  --ink:#E7ECF4;
+  --muted:#A3AEC1;
+  --rule:#263145;
+  --accent:#A8BDFF;
+  --accent-fill:#3C5DD3;
+  --accent-fill-hover:#4E6EE2;
+  --on-accent:#FFFFFF;
+  --accent-soft:#18223C;
+  --mark:rgb(247 202 22 / .34);
+  --good:#53C792;
+  --warn:#F2A262;
+  --shadow:0 1px 2px rgb(0 0 0 / .5), 0 10px 30px rgb(0 0 0 / .35);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:var(--fs-body);line-height:1.6;font-weight:400}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+h1,h2,h3{font-family:var(--font-display);line-height:1.04;margin:0;text-wrap:balance;font-weight:700;letter-spacing:-.005em}
+h2{font-size:var(--fs-h2)}
+h3{font-size:var(--fs-h3);font-weight:600;line-height:1.12}
+p{margin:0}
+a{color:var(--accent);text-underline-offset:.18em}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+section[id]{scroll-margin-top:84px}
+mark{background:linear-gradient(transparent 60%,var(--mark) 60%);color:inherit;padding:0 .05em}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(56px,8vw,96px)}
+.band--surface{background:var(--surface);border-block:1px solid var(--rule)}
+.eyebrow{font-family:var(--font-mono);font-size:.78rem;font-weight:500;letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+.lead{font-size:var(--fs-lead);color:var(--muted);max-width:60ch;line-height:1.5}
+.section-head{display:grid;gap:14px;max-width:70ch;margin-bottom:clamp(28px,4vw,44px)}
+.muted{color:var(--muted)}
+.small{font-size:var(--fs-small)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font-display);font-weight:600;font-size:1.2rem;letter-spacing:.02em;line-height:1;padding:.8em 1.25em;border-radius:8px;border:2px solid transparent;text-decoration:none;cursor:pointer;transition:background-color .15s ease,border-color .15s ease,color .15s ease}
+.btn--primary{background:var(--accent-fill);color:var(--on-accent)}
+.btn--primary:hover{background:var(--accent-fill-hover)}
+.btn--ghost{background:transparent;color:var(--ink);border-color:var(--rule)}
+.btn--ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn--sm{font-size:1.05rem;padding:.6em 1em}
+
+/* Header */
+.site{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:1px solid var(--rule)}
+.site .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-family:var(--font-display);font-weight:700;font-size:1.55rem;letter-spacing:.01em;line-height:1}
+.brand small{font-weight:500;color:var(--muted);font-size:1.05rem}
+.brand__mark{display:inline-flex;width:34px;height:22px;border:2px solid var(--plate-ink);border-radius:4px;background:var(--plate-white);overflow:hidden;flex:none}
+.brand__mark::before{content:"";width:9px;background:var(--plate-band)}
+.nav{display:flex;align-items:center;gap:22px}
+.nav a:not(.btn){color:var(--ink);text-decoration:none;font-weight:500;font-size:.98rem}
+.nav a:not(.btn):hover{color:var(--accent)}
+@media (max-width:820px){.nav a:not(.btn){display:none}}
+
+/* Hero */
+.hero{padding-block:clamp(40px,7vw,88px) clamp(48px,7vw,80px)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(36px,5vw,64px);align-items:center}
+@media (max-width:900px){.hero .wrap{grid-template-columns:minmax(0,1fr)}}
+.hero__copy{min-width:0}
+.hero h1{font-size:var(--fs-h1);margin-top:14px}
+.hero .lead{margin-top:20px}
+.hero__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.hero__note{margin-top:14px;font-size:var(--fs-small);color:var(--muted)}
+.proof{grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;padding-top:24px;border-top:1px solid var(--rule)}
+.proof b{display:block;font-family:var(--font-display);font-size:1.22rem;font-weight:600;line-height:1.15;margin-bottom:4px}
+.proof span{font-size:var(--fs-small);color:var(--muted);line-height:1.45;display:block}
+@media (max-width:640px){.proof{grid-template-columns:minmax(0,1fr);gap:16px}}
+
+/* Plates */
+.plates{display:grid;justify-items:center;gap:14px;min-width:0}
+.plate{display:flex;align-items:stretch;height:clamp(66px,8vw,88px);border:2.5px solid var(--plate-ink);border-radius:7px;overflow:hidden;box-shadow:inset 0 0 0 2px var(--plate-gloss),var(--shadow);font-family:var(--font-display);color:var(--plate-ink);max-width:100%}
+.plate--uk{background:var(--plate-yellow);transform:rotate(-2deg)}
+.plate--es{background:var(--plate-white);transform:rotate(1.5deg)}
+.plate__band{flex:none;width:clamp(28px,3.4vw,38px);background:var(--plate-band);color:var(--plate-band-ink);display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:7px 0 6px;font-weight:600;font-size:clamp(.78rem,1.2vw,1rem);line-height:1}
+.plate__band svg{width:74%;height:auto;display:block}
+.plate__chars{display:flex;align-items:center;padding-inline:clamp(12px,1.8vw,20px);font-weight:600;font-size:clamp(2.3rem,4.6vw,3.55rem);letter-spacing:.05em;white-space:nowrap;line-height:1}
+.plate__caption{font-family:var(--font-mono);font-size:.76rem;color:var(--muted);letter-spacing:.04em;text-align:center}
+.sign{display:grid;place-items:center;width:52px;height:52px;border-radius:10px;background:var(--accent-fill);color:var(--on-accent);box-shadow:inset 0 0 0 3px var(--accent-fill),inset 0 0 0 5px var(--on-accent)}
+.sign svg{width:26px;height:26px}
+
+/* Comparison */
+.compare__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border:1px solid var(--rule);border-radius:14px;overflow:hidden;background:var(--surface)}
+.compare__col{padding:clamp(22px,3.5vw,36px);display:grid;gap:16px;align-content:start;min-width:0}
+.compare__col + .compare__col{border-left:1px solid var(--rule);background:var(--accent-soft)}
+.km{font-family:var(--font-display);font-weight:700;font-size:clamp(2.6rem,6vw,4rem);line-height:1;font-variant-numeric:tabular-nums}
+.km small{font-size:1rem;font-weight:600;letter-spacing:.02em;margin-left:8px;color:var(--muted)}
+.km--old{color:var(--muted);text-decoration:line-through;text-decoration-thickness:3px}
+.km--new{color:var(--accent)}
+.compare ul{margin:0;padding:0;list-style:none;display:grid;gap:12px}
+.compare li{padding-left:22px;position:relative}
+.compare li::before{content:"";position:absolute;left:0;top:.75em;width:11px;height:2px;background:currentColor;opacity:.55}
+@media (max-width:760px){
+  .compare__grid{grid-template-columns:minmax(0,1fr)}
+  .compare__col + .compare__col{border-left:0;border-top:1px solid var(--rule)}
+}
+
+/* How it works: a road with five stops */
+.route{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:24px;position:relative}
+.route::before{content:"";position:absolute;left:21px;right:calc((100% - 96px) / 5 - 21px);top:20px;height:3px;background:repeating-linear-gradient(90deg,var(--rule) 0 14px,transparent 14px 24px)}
+.route li{position:relative;display:grid;gap:10px;align-content:start;min-width:0}
+.route__num{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--surface);border:3px solid var(--accent-fill);font-family:var(--font-mono);font-weight:500;color:var(--accent);position:relative;z-index:1}
+.route li:last-child .route__num{background:var(--accent-fill);color:var(--on-accent)}
+.route h3{font-size:1.38rem}
+.route p{color:var(--muted);font-size:.98rem}
+@media (max-width:900px){
+  .route{grid-template-columns:minmax(0,1fr);gap:26px}
+  .route::before{left:20px;right:auto;top:20px;bottom:20px;width:3px;height:auto;background:repeating-linear-gradient(180deg,var(--rule) 0 14px,transparent 14px 24px)}
+  .route li{grid-template-columns:42px minmax(0,1fr);column-gap:18px;row-gap:6px}
+  .route__num{grid-column:1;grid-row:1 / span 2}
+  .route h3,.route p{grid-column:2}
+  .route h3{padding-top:8px}
+}
+.timeline-note{margin-top:32px;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:var(--fs-small);color:var(--muted)}
+.timeline-note b{color:var(--ink);font-weight:600}
+
+/* Who we help */
+.who{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));border-top:1px solid var(--rule)}
+.who__item{display:grid;grid-template-columns:116px minmax(0,1fr);gap:18px;padding-block:26px;border-bottom:1px solid var(--rule)}
+.who__item:nth-child(odd){padding-right:28px}
+.who__item:nth-child(even){padding-left:28px;border-left:1px solid var(--rule)}
+.who h3{font-size:1.38rem}
+.who p{color:var(--muted);margin-top:6px}
+@media (max-width:760px){
+  .who{grid-template-columns:minmax(0,1fr)}
+  .who__item:nth-child(odd),.who__item:nth-child(even){padding-left:0;padding-right:0;border-left:0}
+  .who__item{grid-template-columns:104px minmax(0,1fr)}
+}
+.chip{display:inline-flex;height:30px;border:2px solid var(--plate-ink);border-radius:5px;overflow:hidden;font-family:var(--font-display);font-weight:600;font-size:.88rem;color:var(--plate-ink);justify-self:start;margin-top:3px;max-width:100%}
+.chip i{flex:none;width:11px;background:var(--plate-band)}
+.chip b{display:flex;align-items:center;padding-inline:7px;background:var(--plate-white);font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.chip--uk b{background:var(--plate-yellow)}
+.chip--other i{background:var(--muted)}
+
+/* Costs */
+.costs{display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);gap:clamp(28px,4vw,56px);align-items:start}
+@media (max-width:980px){.costs{grid-template-columns:minmax(0,1fr)}}
+.fees{display:grid;border-top:1px solid var(--rule);min-width:0}
+.fee{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;padding-block:14px;border-bottom:1px solid var(--rule);align-items:baseline}
+.fee__label{font-weight:600;min-width:0}
+.fee__label span{display:block;font-weight:400;font-size:var(--fs-small);color:var(--muted);margin-top:2px;line-height:1.45}
+.fee__amt{font-family:var(--font-display);font-weight:600;font-size:1.28rem;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.fee--ours{background:var(--accent-soft);border-radius:10px;padding:16px;margin-top:12px;border-bottom:0}
+.fee--ours .fee__amt{color:var(--accent)}
+.bands{grid-column:1 / -1;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:8px}
+.bands span{display:grid;gap:2px;padding:8px 10px;border-radius:6px;background:var(--accent-soft);font-size:.8rem;line-height:1.25;color:var(--muted)}
+.bands b{font-family:var(--font-display);font-size:1.15rem;color:var(--ink);font-variant-numeric:tabular-nums}
+@media (max-width:480px){.bands{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.fees-foot{margin-top:14px;font-size:.82rem;color:var(--muted);line-height:1.5}
+
+.estimator{background:var(--surface);border:1px solid var(--rule);border-radius:14px;box-shadow:var(--shadow);padding:clamp(20px,3vw,32px);display:grid;gap:22px;min-width:0}
+.estimator h3{font-size:1.6rem}
+.estimator .intro{margin-top:6px;color:var(--muted);font-size:.95rem;max-width:56ch}
+.est-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media (max-width:560px){.est-grid{grid-template-columns:minmax(0,1fr)}}
+.field{display:grid;gap:6px;min-width:0;align-content:start}
+.field > label,.field .label{font-weight:600;font-size:.95rem}
+.hint{font-size:.78rem;color:var(--muted);font-family:var(--font-mono);letter-spacing:.02em}
+input[type="text"],input[type="tel"],input[type="email"],input[type="number"],select,textarea{width:100%;min-width:0;font:inherit;font-size:1rem;color:var(--ink);background:var(--paper);border:1.5px solid var(--rule);border-radius:8px;padding:.62em .75em}
+textarea{resize:vertical;line-height:1.5}
+input:focus,select:focus,textarea:focus{border-color:var(--accent);outline:none;box-shadow:0 0 0 3px var(--accent-soft)}
+input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:var(--warn)}
+.affix{display:flex;align-items:stretch;border:1.5px solid var(--rule);border-radius:8px;background:var(--paper);overflow:hidden}
+.affix:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.affix input[type="number"]{border:0;border-radius:0;background:transparent;box-shadow:none}
+.affix span{display:grid;place-items:center;padding-inline:.75em;color:var(--muted);font-family:var(--font-mono);font-size:.85rem;background:var(--accent-soft);flex:none}
+.check{display:flex;gap:10px;align-items:center;font-weight:600;cursor:pointer;font-size:.98rem}
+.check input{width:20px;height:20px;margin:0;accent-color:var(--accent-fill);flex:none}
+.field--check{align-content:end;padding-bottom:8px}
+.est-out{border-top:2px solid var(--ink);padding-top:10px;display:grid;gap:14px}
+.table-scroll{overflow-x:auto}
+.est-table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.est-table td{padding:9px 0;border-bottom:1px solid var(--rule);vertical-align:top;font-size:.98rem}
+.est-table td:last-child{text-align:right;white-space:nowrap;font-weight:600;padding-left:14px}
+.est-table .note{display:block;font-size:.8rem;color:var(--muted);font-weight:400;line-height:1.4}
+.est-total{display:flex;justify-content:space-between;align-items:baseline;gap:6px 16px;flex-wrap:wrap}
+.est-total span{font-weight:600}
+.est-total b{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.6rem);line-height:1;font-variant-numeric:tabular-nums;color:var(--accent)}
+.est-foot{font-size:.82rem;color:var(--muted);line-height:1.5}
+
+/* Deadlines */
+.deadlines{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+@media (max-width:980px){.deadlines{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.deadlines{grid-template-columns:minmax(0,1fr)}}
+.deadline{padding:22px;border-radius:12px;background:var(--surface);border:1px solid var(--rule);display:grid;gap:10px;align-content:start;min-width:0}
+.deadline > b{font-family:var(--font-display);font-weight:700;font-size:clamp(2.2rem,3.6vw,2.9rem);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
+.deadline--warn > b{color:var(--warn)}
+.deadline h3{font-size:1.22rem}
+.deadline p{font-size:.96rem;color:var(--muted)}
+
+/* Checklist */
+.checklist{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 36px}
+@media (max-width:700px){.checklist{grid-template-columns:minmax(0,1fr)}}
+.checklist li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:12px;align-items:start;padding-bottom:14px;border-bottom:1px dashed var(--rule)}
+.checklist svg{width:22px;height:22px;color:var(--good);margin-top:2px}
+
+/* Founder note */
+.founder figure{margin:0;max-width:820px;display:grid;gap:18px}
+.founder blockquote{margin:0;font-family:var(--font-display);font-weight:500;font-size:clamp(1.5rem,3vw,2.1rem);line-height:1.25}
+.founder figcaption{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;font-family:var(--font-mono);font-size:.85rem;color:var(--muted)}
+.trip{display:inline-flex;gap:8px;align-items:center;padding:6px 12px;border:1px solid var(--rule);border-radius:999px}
+
+/* FAQ */
+.faq{display:grid;border-top:1px solid var(--rule);max-width:880px}
+.faq details{border-bottom:1px solid var(--rule)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding-block:18px;font-family:var(--font-display);font-weight:600;font-size:1.32rem;line-height:1.2}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--font-mono);font-weight:400;color:var(--accent);font-size:1.5rem;line-height:1;transition:transform .2s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .answer{padding-bottom:20px;color:var(--muted);max-width:68ch;display:grid;gap:10px}
+
+/* Quote */
+.quote{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,4vw,56px);align-items:start}
+@media (max-width:980px){.quote{grid-template-columns:minmax(0,1fr)}}
+.quote__intro{display:grid;gap:16px;min-width:0}
+.contact-lines{display:grid;gap:12px;margin-top:10px;padding-top:18px;border-top:1px solid var(--rule)}
+.contact-line{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+.contact-line span{font-family:var(--font-mono);font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);min-width:86px}
+.contact-line b{font-weight:600;user-select:all;overflow-wrap:anywhere}
+.form{background:var(--paper);border:1px solid var(--rule);border-radius:14px;box-shadow:var(--shadow);padding:clamp(20px,3vw,32px);display:grid;gap:18px;min-width:0}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.form-grid .full{grid-column:1 / -1}
+@media (max-width:560px){.form-grid{grid-template-columns:minmax(0,1fr)}}
+.form input[type="text"],.form input[type="tel"],.form input[type="email"],.form input[type="number"],.form select,.form textarea{background:var(--surface)}
+.req{color:var(--warn);font-weight:600}
+.error{color:var(--warn);font-weight:600;font-size:.95rem}
+.ready{border:2px solid var(--good);border-radius:12px;padding:18px;display:grid;gap:12px;background:var(--surface)}
+.ready h3{font-size:1.4rem;color:var(--good)}
+.ready__actions{display:flex;flex-wrap:wrap;gap:10px}
+.ready textarea{font-family:var(--font-mono);font-size:.84rem;min-height:200px;background:var(--paper)}
+
+/* Footer */
+.site-foot{padding-block:36px 48px;background:var(--paper);font-size:var(--fs-small);color:var(--muted)}
+.site-foot .wrap{display:grid;gap:14px}
+.site-foot .row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:10px 24px}
+.site-foot .brand{font-size:1.35rem}
+.site-foot b{color:var(--ink);font-weight:600;overflow-wrap:anywhere}
+
+.contact-line a{font-weight:600;color:var(--ink);overflow-wrap:anywhere}
+.contact-line a:hover,.site-foot a:hover{color:var(--accent)}
+.site-foot a{color:var(--ink);font-weight:600;overflow-wrap:anywhere}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Replate Barcelona, back to top">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span>Replate <small>Barcelona</small></span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="#costs">Costs</a>
+      <a href="#deadlines">Deadlines</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn--primary btn--sm" href="#quote">Get a quote</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap">
+      <div class="hero__copy">
+        <p class="eyebrow">UK &amp; foreign cars onto Spanish plates · Barcelona &amp; all of Catalonia</p>
+        <h1 id="hero-h">Get your UK car onto Spanish plates without leaving Catalonia.</h1>
+        <p class="lead">We collect the car, sort the headlights, take it through the import ITV, deal with customs and tax, and bring it back on Spanish plates. You get a <mark>fixed, itemised quote</mark> before you commit, and updates on WhatsApp throughout.</p>
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#quote">Get my fixed quote</a>
+          <a class="btn btn--ghost" href="#costs">Estimate my costs</a>
+        </div>
+        <p class="hero__note">Quotes within one working day · English and Spanish spoken</p>
+      </div>
+
+      <div class="plates">
+        <div class="plate plate--uk" role="img" aria-label="A UK rear number plate">
+          <span class="plate__band"><span></span><span>UK</span></span>
+          <span class="plate__chars">LD10 RHD</span>
+        </div>
+        <p class="plate__caption">Before · UK rear plate</p>
+        <div class="sign" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v15"></path><path d="M6 13l6 6 6-6"></path></svg>
+        </div>
+        <div class="plate plate--es" role="img" aria-label="A Spanish number plate">
+          <span class="plate__band">
+            <svg viewBox="0 0 20 20" aria-hidden="true">
+              <g fill="var(--plate-stars)">
+                <circle cx="10" cy="3" r="1.15"></circle><circle cx="13.5" cy="3.94" r="1.15"></circle><circle cx="16.06" cy="6.5" r="1.15"></circle><circle cx="17" cy="10" r="1.15"></circle>
+                <circle cx="16.06" cy="13.5" r="1.15"></circle><circle cx="13.5" cy="16.06" r="1.15"></circle><circle cx="10" cy="17" r="1.15"></circle><circle cx="6.5" cy="16.06" r="1.15"></circle>
+                <circle cx="3.94" cy="13.5" r="1.15"></circle><circle cx="3" cy="10" r="1.15"></circle><circle cx="3.94" cy="6.5" r="1.15"></circle><circle cx="6.5" cy="3.94" r="1.15"></circle>
+              </g>
+            </svg>
+            <span>E</span>
+          </span>
+          <span class="plate__chars">4821 BCN</span>
+        </div>
+        <p class="plate__caption">After · Spanish plate, legal for residents</p>
+      </div>
+
+      <div class="proof">
+        <div><b>We come to you</b><span>Collection and return across Barcelona, the Garraf and the Penedès</span></div>
+        <div><b>Every euro itemised</b><span>Official fees, tax, parts and our fee on separate lines</span></div>
+        <div><b>Answers on WhatsApp</b><span>From the person handling your car, in plain English</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band compare" aria-labelledby="compare-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The difference</p>
+        <h2 id="compare-h">Until now, getting it all done in English meant a long drive south.</h2>
+      </div>
+      <div class="compare__grid">
+        <div class="compare__col">
+          <p class="eyebrow">The usual route</p>
+          <p class="km km--old">1,100+ km</p>
+          <ul>
+            <li>Drive to a specialist in the south and back, usually with a night in a hotel.</li>
+            <li>Order headlights from abroad and hope they arrive before your ITV slot.</li>
+            <li>Pay an all-in price without seeing what is tax and what is fee.</li>
+          </ul>
+        </div>
+        <div class="compare__col">
+          <p class="eyebrow">With Replate</p>
+          <p class="km km--new">0 km<small>with collection</small></p>
+          <ul>
+            <li>We collect from home or work, use a local workshop and a local ITV station, and bring the car back.</li>
+            <li>Headlights are sourced and fitted before the test is booked.</li>
+            <li>Your quote shows every official fee, tax, part and our fee on its own line.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--surface" id="how" aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">How it works</p>
+        <h2 id="how-h">Five stops from UK plates to Spanish ones.</h2>
+        <p class="lead">You send the documents. We handle everything between your front door and Tráfico.</p>
+      </div>
+      <ol class="route">
+        <li>
+          <span class="route__num">1</span>
+          <h3>Send your V5C</h3>
+          <p>WhatsApp or email a photo of your logbook and tell us where the car is. We reply with a fixed, itemised quote within one working day.</p>
+        </li>
+        <li>
+          <span class="route__num">2</span>
+          <h3>Paperwork</h3>
+          <p>We check your documents, order the technical file the ITV needs, and claim the customs and tax exemptions you qualify for.</p>
+        </li>
+        <li>
+          <span class="route__num">3</span>
+          <h3>Workshop prep</h3>
+          <p>Headlights converted or replaced for driving on the right, rear fog light moved if needed, and tyres and lights checked before the test.</p>
+        </li>
+        <li>
+          <span class="route__num">4</span>
+          <h3>Import ITV</h3>
+          <p>We take the car to a local ITV station for the import inspection, which takes about an hour and a half.</p>
+        </li>
+        <li>
+          <span class="route__num">5</span>
+          <h3>Spanish plates</h3>
+          <p>We register the car with Tráfico (DGT), pay the taxes and fit your new plates. You get the Spanish registration certificate, ITV card and windscreen stickers.</p>
+        </li>
+      </ol>
+      <p class="timeline-note"><span><b>Typical timeline:</b> 2–4 weeks from documents to plates</span><span>Registration usually completes about 10 working days after the ITV pass</span></p>
+    </div>
+  </section>
+
+  <section class="band" id="who" aria-labelledby="who-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Who we help</p>
+        <h2 id="who-h">For residents of Catalonia with a foreign-plated car.</h2>
+      </div>
+      <div class="who">
+        <div class="who__item">
+          <span class="chip chip--uk" aria-hidden="true"><i></i><b>UK</b></span>
+          <div><h3>UK cars</h3><p>Customs, headlights, ITV and registration. If you're moving here with a car you've owned for at least six months, customs duty and import IVA are usually waived.</p></div>
+        </div>
+        <div class="who__item">
+          <span class="chip" aria-hidden="true"><i></i><b>IRL</b></span>
+          <div><h3>Irish cars</h3><p>Right-hand drive like UK cars, so the same headlight work, but no customs to clear.</p></div>
+        </div>
+        <div class="who__item">
+          <span class="chip" aria-hidden="true"><i></i><b>F · NL · D</b></span>
+          <div><h3>Other EU cars</h3><p>French, Dutch, German and other EU plates. No customs and no headlight changes, so it's mainly the ITV, tax and paperwork.</p></div>
+        </div>
+        <div class="who__item">
+          <span class="chip chip--other" aria-hidden="true"><i></i><b>CH · USA</b></span>
+          <div><h3>Everything else</h3><p>Motorhomes, motorbikes and cars from outside the EU. Tell us what you have and we'll say straight away whether we can help.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--surface" id="costs" aria-labelledby="costs-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What it costs</p>
+        <h2 id="costs-h">Most of the bill is official fees and tax. We show you which part is ours.</h2>
+        <p class="lead">These are the official costs in Catalonia for 2026. Your quote lists each one on its own line, next to our fixed fee.</p>
+      </div>
+      <div class="costs">
+        <div>
+          <div class="fees">
+            <div class="fee">
+              <div class="fee__label">Import ITV inspection<span>Inspection of a used imported car before registration</span></div>
+              <div class="fee__amt">≈ €100</div>
+            </div>
+            <div class="fee">
+              <div class="fee__label">DGT registration fee<span>Tasa 1.1, paid to Tráfico</span></div>
+              <div class="fee__amt">€99.77</div>
+            </div>
+            <div class="fee">
+              <div class="fee__label">Spanish number plates<span>Front and rear, fitted</span></div>
+              <div class="fee__amt">≈ €40</div>
+            </div>
+            <div class="fee">
+              <div class="fee__label">Registration tax (IEDMT)<span>A percentage of Hacienda's official value for your car, set by its CO₂ figure (V5C box V.7)</span></div>
+              <div class="fee__amt">0–16%</div>
+              <div class="bands">
+                <span><b>0%</b>up to 120 g/km</span>
+                <span><b>4.75%</b>121–159 g/km</span>
+                <span><b>9.75%</b>160–199 g/km</span>
+                <span><b>16%</b>200 g/km and over</span>
+              </div>
+            </div>
+            <div class="fee">
+              <div class="fee__label">Road tax (IVTM)<span>Per year, set by your town hall and the engine size</span></div>
+              <div class="fee__amt">€25–250</div>
+            </div>
+            <div class="fee">
+              <div class="fee__label">Customs, UK and non-EU cars only<span>€0 with transfer-of-residence relief, otherwise 10% duty plus 21% import IVA on the car's value</span></div>
+              <div class="fee__amt">0–33%</div>
+            </div>
+            <div class="fee fee--ours">
+              <div class="fee__label">Our fee, fixed<span>Paperwork, workshop coordination, the ITV visit, registration and plate fitting. Collection and return costs <b data-bind="collectText">€150 + IVA</b>.</span></div>
+              <div class="fee__amt" data-bind="feeText">€450 + IVA</div>
+            </div>
+          </div>
+          <p class="fees-foot">Catalonia sets its own registration-tax rate on the top CO₂ band. Headlights, technical documents and any repairs depend on the car and are quoted individually.</p>
+        </div>
+
+        <div class="estimator" id="estimator">
+          <div>
+            <h3 id="est-h">Ballpark estimator</h3>
+            <p class="intro">Rough numbers in seconds. Your fixed quote uses Hacienda's official valuation and checks every exemption you qualify for.</p>
+          </div>
+          <form class="est-grid" id="est-form" aria-labelledby="est-h" novalidate>
+            <div class="field">
+              <label for="est-origin">Car registered in</label>
+              <select id="est-origin">
+                <option value="uk" selected>United Kingdom</option>
+                <option value="ie">Ireland</option>
+                <option value="eu">Another EU country</option>
+                <option value="other">Outside the EU</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="est-moving">Your situation</label>
+              <select id="est-moving">
+                <option value="yes" selected>Moving here, car owned 6+ months</option>
+                <option value="no">Already resident, or car bought recently</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="est-co2">CO₂ emissions</label>
+              <div class="affix"><input id="est-co2" type="number" inputmode="numeric" min="0" max="999" step="1" value="139"><span>g/km</span></div>
+              <span class="hint">V5C box V.7</span>
+            </div>
+            <div class="field">
+              <label for="est-value">Rough value of the car</label>
+              <div class="affix"><span>€</span><input id="est-value" type="number" inputmode="numeric" min="0" step="500" value="12000"></div>
+              <span class="hint">Your quote uses Hacienda's table</span>
+            </div>
+            <div class="field" id="est-lights-field">
+              <label for="est-lights">Headlights</label>
+              <select id="est-lights">
+                <option value="halogen" selected>Halogen</option>
+                <option value="xenon">Xenon or LED</option>
+                <option value="ok">Already set for driving on the right</option>
+                <option value="unsure">Not sure</option>
+              </select>
+            </div>
+            <div class="field field--check">
+              <label class="check" for="est-collect"><input id="est-collect" type="checkbox" checked> Collect and return the car</label>
+            </div>
+          </form>
+          <div class="est-out">
+            <div class="table-scroll">
+              <table class="est-table" aria-describedby="est-h">
+                <tbody id="est-body"></tbody>
+              </table>
+            </div>
+            <div class="est-total"><span>Estimated total</span><b id="est-total" aria-live="polite">€1,557–€2,646</b></div>
+            <p class="est-foot">A guide only. Registration tax is worked out on Hacienda's official value for your make, model and age, which is often lower than the market value of an older car. UK-built cars can qualify for 0% customs duty with proof of origin.</p>
+            <div><button type="button" class="btn btn--primary" id="est-send">Use these details for my quote</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="deadlines" aria-labelledby="dl-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Deadlines</p>
+        <h2 id="dl-h">The clock starts when you become resident.</h2>
+        <p class="lead">Talk to us early. Some exemptions are only open for a few weeks.</p>
+      </div>
+      <div class="deadlines">
+        <div class="deadline">
+          <b>30 days</b>
+          <h3>To register as a resident</h3>
+          <p>A resident's foreign-plated car is expected to be registered here within 30 days of starting to use it in Spain, or 60 days if you moved your home here with it.</p>
+        </div>
+        <div class="deadline deadline--warn">
+          <b>60 days</b>
+          <h3>To claim the registration-tax exemption</h3>
+          <p>People moving their home to Spain can be exempt from registration tax, but the claim has to be filed within this window. Miss it and you may lose the exemption.</p>
+        </div>
+        <div class="deadline">
+          <b>12 months</b>
+          <h3>To claim customs relief on a UK car</h3>
+          <p>Duty and import IVA are waived if you lived outside the EU for at least 12 months, owned and used the car for six months before moving, and claim within 12 months of moving.</p>
+        </div>
+        <div class="deadline deadline--warn">
+          <b>50–150%</b>
+          <h3>Penalties on unpaid tax</h3>
+          <p>In recent Guardia Civil and tax agency checks on foreign-plated cars in the Balearics, penalties ran at 50–150% of the unpaid tax, and cars can be immobilised on the spot.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band band--surface" id="checklist" aria-labelledby="ck-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">What you'll need</p>
+        <h2 id="ck-h">Have these ready and we can start straight away.</h2>
+      </div>
+      <ul class="checklist">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Your original V5C logbook, or your EU registration certificate</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Passport</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>NIE certificate or TIE residence card</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Padrón certificate from your town hall, ideally issued in the last three months, or your deeds or rental contract</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Driving licence</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Photos of the car from all four sides</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Photos of the VIN and weights plate and the tyre pressure sticker</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Certificate of Conformity, if you have one. We can order it if not.</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"></path></svg><span>Valid insurance on the car until the new plates go on</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band founder" aria-labelledby="founder-h">
+    <div class="wrap">
+      <figure>
+        <p class="eyebrow" id="founder-h">Why Replate exists</p>
+        <blockquote>
+          <p>In February 2026 I drove my Land Rover from Sitges to Murcia to get it onto Spanish plates. That's about 570 km each way, a night in a hotel, and a tense morning waiting for a parcel of headlights to arrive before my ITV slot. I couldn't find anyone in Catalonia doing the whole job in English, so now I do it here.</p>
+        </blockquote>
+        <figcaption><span>Dave, founder</span><span class="trip">Sitges → Los Alcázares → Sitges · 1,100+ km</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band band--surface" id="faq" aria-labelledby="faq-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2 id="faq-h">Common questions</h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary>Do I have to bring the car to you?</summary>
+          <div class="answer"><p>No. We collect from home or work across Barcelona, the Garraf and the Penedès, and can arrange collection from elsewhere in Catalonia. If you'd rather drop the car off, that works too.</p></div>
+        </details>
+        <details>
+          <summary>Can I keep driving on UK plates while you work on it?</summary>
+          <div class="answer"><p>Yes, as long as the car stays legal in the UK, with road tax, MOT and insurance, and you're within the time Spanish rules allow. We'll tell you where you stand when we quote.</p></div>
+        </details>
+        <details>
+          <summary>What happens with my headlights?</summary>
+          <div class="answer"><p>UK headlights dip towards the left-hand kerb, which dazzles oncoming drivers here, so the import ITV checks for a beam pattern made for driving on the right. Depending on the lamp, we fit E-marked units built for right-hand traffic or have your existing lamps adjusted.</p><p>Send us a photo of one headlight and the label on top of it and we'll price it.</p></div>
+        </details>
+        <details>
+          <summary>Will I pay customs and IVA on a UK car?</summary>
+          <div class="answer"><p>Usually not, if you're moving your home to Spain. The conditions are that you lived outside the EU for at least 12 months, owned and used the car for six months before moving, and claim within 12 months of arriving.</p><p>Otherwise UK cars pay 10% duty plus 21% import IVA on their value, although cars built in the UK can qualify for 0% duty with proof of origin. We check this before you commit to anything.</p></div>
+        </details>
+        <details>
+          <summary>How long does it take?</summary>
+          <div class="answer"><p>Usually two to four weeks from receiving your documents to new plates on the car. Registration typically completes about 10 working days after the ITV pass. A customs claim or special-order headlights can add time.</p></div>
+        </details>
+        <details>
+          <summary>What if the car fails the ITV?</summary>
+          <div class="answer"><p>The inspector lists what needs fixing. We tell you the price of any extra work before doing it, fix it, and take the car back for the re-test.</p></div>
+        </details>
+        <details>
+          <summary>Do you only handle UK cars?</summary>
+          <div class="answer"><p>No. We also register Irish and other EU cars, and can advise on motorhomes, motorbikes and cars from outside the EU.</p></div>
+        </details>
+        <details>
+          <summary>Can you help with my driving licence and insurance?</summary>
+          <div class="answer"><p>Yes. Ask us about exchanging a UK licence for a Spanish one, and about insurance on Spanish plates, when you request your quote.</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="quote" aria-labelledby="quote-h">
+    <div class="wrap quote">
+      <div class="quote__intro">
+        <p class="eyebrow">Fixed quote</p>
+        <h2 id="quote-h">Tell us about the car.</h2>
+        <p class="lead">We'll reply within one working day with every cost itemised. After you send this, WhatsApp us a photo of your V5C so we can confirm the details.</p>
+        <div class="contact-lines">
+          <div class="contact-line"><span>WhatsApp</span><a data-bind="whatsappDisplay" data-link="whatsapp" href="https://wa.me/34600000000" target="_blank" rel="noopener">+34 600 000 000</a></div>
+          <div class="contact-line"><span>Email</span><a data-bind="email" data-link="email" href="mailto:hola@replate.example">hola@replate.example</a></div>
+          <div class="contact-line"><span>Area</span><b>Barcelona, the Garraf, the Penedès and all of Catalonia</b></div>
+        </div>
+      </div>
+
+      <form class="form" id="quote-form" novalidate>
+        <div class="form-grid">
+          <div class="field">
+            <label for="q-name">Your name <span class="req" aria-hidden="true">*</span></label>
+            <input id="q-name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="q-phone">Mobile or WhatsApp <span class="req" aria-hidden="true">*</span></label>
+            <input id="q-phone" type="tel" autocomplete="tel" placeholder="+34 or +44" required>
+          </div>
+          <div class="field">
+            <label for="q-email">Email</label>
+            <input id="q-email" type="email" autocomplete="email" placeholder="Optional">
+          </div>
+          <div class="field">
+            <label for="q-town">Town where the car is <span class="req" aria-hidden="true">*</span></label>
+            <input id="q-town" type="text" autocomplete="address-level2" placeholder="e.g. Sitges" required>
+          </div>
+          <div class="field full">
+            <label for="q-car">Make, model and year <span class="req" aria-hidden="true">*</span></label>
+            <input id="q-car" type="text" placeholder="e.g. Land Rover Freelander 2, 2010" required>
+          </div>
+          <div class="field">
+            <label for="q-origin">Registered in</label>
+            <select id="q-origin">
+              <option value="uk" selected>United Kingdom</option>
+              <option value="ie">Ireland</option>
+              <option value="eu">Another EU country</option>
+              <option value="other">Outside the EU</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="q-co2">CO₂ (g/km), if you know it</label>
+            <input id="q-co2" type="number" inputmode="numeric" min="0" max="999" step="1">
+            <span class="hint">V5C box V.7</span>
+          </div>
+          <div class="field">
+            <label for="q-moving">Your situation</label>
+            <select id="q-moving">
+              <option value="moving" selected>Moving to Spain with this car</option>
+              <option value="resident">Already living in Spain</option>
+              <option value="unsure">Not sure</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="q-lights">Headlights</label>
+            <select id="q-lights">
+              <option value="unsure" selected>Not sure</option>
+              <option value="halogen">Halogen</option>
+              <option value="xenon">Xenon or LED</option>
+              <option value="ok">Already set for driving on the right</option>
+            </select>
+          </div>
+          <div class="field full">
+            <label class="check" for="q-collect"><input id="q-collect" type="checkbox" checked> Please collect and return the car</label>
+          </div>
+          <div class="field full">
+            <label for="q-notes">Anything else?</label>
+            <textarea id="q-notes" rows="3" placeholder="Towbar, modifications, a date you need it done by"></textarea>
+          </div>
+        </div>
+        <p class="error" id="q-error" role="alert" hidden></p>
+        <div><button class="btn btn--primary" type="submit">Prepare my quote request</button></div>
+
+        <div class="ready" id="q-ready" hidden>
+          <h3>Your quote request is ready</h3>
+          <p>Send it to us on WhatsApp or by email. You can also copy it and send it your own way.</p>
+          <div class="ready__actions">
+            <a class="btn btn--primary" id="q-wa" href="https://wa.me/" target="_blank" rel="noopener">Open WhatsApp with this message</a>
+            <a class="btn btn--ghost" id="q-mail" href="mailto:">Email this message</a>
+            <button class="btn btn--ghost" type="button" id="q-copy">Copy message</button>
+          </div>
+          <label class="hint" for="q-preview">Your message</label>
+          <textarea id="q-preview" rows="10" readonly></textarea>
+          <p class="hint" id="q-copied" role="status" hidden></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="row">
+      <span class="brand"><span class="brand__mark" aria-hidden="true"></span><span>Replate <small>Barcelona</small></span></span>
+      <span>UK and foreign cars onto Spanish plates · Barcelona and all of Catalonia · English · Español</span>
+    </div>
+    <div class="row">
+      <span>WhatsApp <a data-bind="whatsappDisplay" data-link="whatsapp" href="https://wa.me/34600000000" target="_blank" rel="noopener">+34 600 000 000</a> · <a data-bind="email" data-link="email" href="mailto:hola@replate.example">hola@replate.example</a></span>
+      <span>© 2026 Replate Barcelona</span>
+    </div>
+    <p>Fees and tax rates on this page are a guide based on 2026 figures for Catalonia. Your fixed quote confirms the exact amounts for your car.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // ---- Edit these to go live ----
+  var CONFIG = {
+    brand: "Replate Barcelona",
+    whatsappNumber: "34600000000",       // WhatsApp number, international format, digits only
+    whatsappDisplay: "+34 600 000 000",  // how the number appears on the page
+    email: "hola@replate.example",       // business email
+    serviceFee: 450,                     // fixed fee in euros, before IVA
+    collectionFee: 150,                  // collection and return in euros, before IVA
+    iva: 0.21
+  };
+
+  function $(id) { return document.getElementById(id); }
+  var reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  var eur = new Intl.NumberFormat("en-GB", { style: "currency", currency: "EUR", maximumFractionDigits: 0 });
+  function money(n) { return eur.format(Math.round(n)); }
+  function span(lo, hi) { return Math.round(lo) === Math.round(hi) ? money(lo) : money(lo) + "–" + money(hi); }
+  function pct(r) { return (r * 100).toLocaleString("en-GB", { maximumFractionDigits: 2 }) + "%"; }
+
+  // Contact details and fees from CONFIG
+  var binds = {
+    whatsappDisplay: CONFIG.whatsappDisplay,
+    email: CONFIG.email,
+    feeText: "€" + CONFIG.serviceFee + " + IVA",
+    collectText: "€" + CONFIG.collectionFee + " + IVA"
+  };
+  document.querySelectorAll("[data-bind]").forEach(function (el) {
+    var v = binds[el.getAttribute("data-bind")];
+    if (v != null) el.textContent = v;
+  });
+  document.querySelectorAll("[data-link]").forEach(function (el) {
+    var kind = el.getAttribute("data-link");
+    if (kind === "whatsapp") el.href = "https://wa.me/" + CONFIG.whatsappNumber;
+    if (kind === "email") el.href = "mailto:" + CONFIG.email;
+  });
+
+  // ---- Estimator ----
+  var LIGHTS = { halogen: [350, 700], xenon: [600, 2000], ok: [0, 0], unsure: [0, 2000] };
+  var LIGHT_NOTES = {
+    halogen: "a pair of right-hand-traffic units, fitted",
+    xenon: "priced from a photo of the lamp",
+    ok: "no change needed",
+    unsure: "send us a photo and we will pin this down"
+  };
+
+  function iedmtRate(co2) {
+    if (co2 <= 120) return 0;
+    if (co2 < 160) return 0.0475;
+    if (co2 < 200) return 0.0975;
+    return 0.16;
+  }
+  function num(id, max) {
+    var v = parseFloat($(id).value);
+    return isFinite(v) && v > 0 ? Math.min(v, max) : 0;
+  }
+  function readEstimator() {
+    return {
+      origin: $("est-origin").value,
+      moving: $("est-moving").value,
+      co2: num("est-co2", 999),
+      co2Given: $("est-co2").value.trim() !== "",
+      value: num("est-value", 5000000),
+      lights: $("est-lights").value,
+      collect: $("est-collect").checked
+    };
+  }
+
+  function estimate(s) {
+    var rows = [];
+    var iva = 1 + CONFIG.iva;
+    function add(label, lo, hi, note) { rows.push({ label: label, lo: lo, hi: hi, note: note || "" }); }
+
+    add("Our fixed fee", CONFIG.serviceFee * iva, CONFIG.serviceFee * iva, "inc. IVA");
+    if (s.collect) add("Collection and return", CONFIG.collectionFee * iva, CONFIG.collectionFee * iva, "inc. IVA");
+    add("Import ITV inspection", 96, 120);
+    add("DGT registration fee", 99.77, 99.77, "tasa 1.1");
+    add("Spanish number plates", 30, 50);
+    if (s.origin === "other") add("Technical documents", 250, 1500, "more if the car has no EU type-approval");
+    else add("Technical documents", 80, 250, "Certificate of Conformity or data sheet");
+
+    if (s.origin !== "eu") {
+      var L = LIGHTS[s.lights] || LIGHTS.unsure;
+      add("Headlights", L[0], L[1], LIGHT_NOTES[s.lights]);
+    }
+    if (s.origin === "uk" || s.origin === "ie") add("Rear fog light, if needed", 0, 150, "moved to the correct side");
+
+    if (s.origin === "uk" || s.origin === "other") {
+      if (s.moving === "yes") {
+        add("Customs filing", 150, 300, "duty and import IVA waived under residence relief");
+      } else {
+        var low = s.origin === "uk" ? 0.21 : 0.331;
+        add("Customs duty and import IVA", s.value * low, s.value * 0.331,
+          s.origin === "uk" ? "10% duty + 21% IVA; UK-built cars can qualify for 0% duty" : "10% duty + 21% IVA");
+        add("Customs agent", 150, 300);
+      }
+    }
+
+    var rate = iedmtRate(s.co2);
+    var tax = s.value * rate;
+    if (!s.co2Given) add("Registration tax (IEDMT)", 0, s.value * 0.16, "add the CO₂ figure to narrow this");
+    else if (rate === 0) add("Registration tax (IEDMT)", 0, 0, "nothing to pay at 120 g/km or less");
+    else if (s.moving === "yes") add("Registration tax (IEDMT)", 0, 0, "exempt if claimed within 60 days, otherwise about " + money(tax));
+    else add("Registration tax (IEDMT)", tax, tax, pct(rate) + " of the car’s value");
+
+    add("Road tax, first year", 25, 250, "set by your town hall");
+
+    var lo = 0, hi = 0;
+    rows.forEach(function (r) { lo += r.lo; hi += r.hi; });
+    return { rows: rows, lo: lo, hi: hi };
+  }
+
+  function renderEstimate() {
+    var s = readEstimator();
+    $("est-lights-field").hidden = s.origin === "eu";
+    var result = estimate(s);
+    var tbody = $("est-body");
+    tbody.textContent = "";
+    result.rows.forEach(function (r) {
+      var tr = document.createElement("tr");
+      var td1 = document.createElement("td");
+      td1.textContent = r.label;
+      if (r.note) {
+        var n = document.createElement("span");
+        n.className = "note";
+        n.textContent = r.note;
+        td1.appendChild(n);
+      }
+      var td2 = document.createElement("td");
+      td2.textContent = span(r.lo, r.hi);
+      tr.appendChild(td1);
+      tr.appendChild(td2);
+      tbody.appendChild(tr);
+    });
+    $("est-total").textContent = span(result.lo, result.hi);
+  }
+
+  ["est-origin", "est-moving", "est-co2", "est-value", "est-lights", "est-collect"].forEach(function (id) {
+    $(id).addEventListener("input", renderEstimate);
+    $(id).addEventListener("change", renderEstimate);
+  });
+  $("est-form").addEventListener("submit", function (e) { e.preventDefault(); });
+  renderEstimate();
+
+  // Copy estimator choices into the quote form
+  $("est-send").addEventListener("click", function () {
+    var s = readEstimator();
+    $("q-origin").value = s.origin;
+    if (s.co2Given) $("q-co2").value = Math.round(s.co2);
+    $("q-moving").value = s.moving === "yes" ? "moving" : "resident";
+    $("q-lights").value = s.origin === "eu" ? "ok" : s.lights;
+    $("q-collect").checked = s.collect;
+    $("quote").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+    setTimeout(function () { $("q-name").focus({ preventScroll: true }); }, reduceMotion ? 0 : 500);
+  });
+
+  // ---- Quote request ----
+  var LABELS = {
+    origin: { uk: "United Kingdom", ie: "Ireland", eu: "Another EU country", other: "Outside the EU" },
+    moving: { moving: "Moving to Spain with this car", resident: "Already living in Spain", unsure: "Not sure" },
+    lights: { unsure: "Not sure", halogen: "Halogen", xenon: "Xenon or LED", ok: "Already set for driving on the right" }
+  };
+  var REQUIRED = [
+    ["q-name", "your name"],
+    ["q-phone", "a mobile or WhatsApp number"],
+    ["q-town", "the town where the car is"],
+    ["q-car", "the make, model and year"]
+  ];
+  function val(id) { return $(id).value.trim(); }
+  function joinList(a) { return a.length < 2 ? a.join("") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1]; }
+
+  function buildMessage() {
+    var lines = ["Hi " + CONFIG.brand + ", I’d like a fixed quote to put my car on Spanish plates.", ""];
+    lines.push("Name: " + val("q-name"));
+    lines.push("Mobile/WhatsApp: " + val("q-phone"));
+    if (val("q-email")) lines.push("Email: " + val("q-email"));
+    lines.push("Car: " + val("q-car"));
+    lines.push("Registered in: " + LABELS.origin[$("q-origin").value]);
+    if (val("q-co2")) lines.push("CO2: " + val("q-co2") + " g/km");
+    lines.push("Situation: " + LABELS.moving[$("q-moving").value]);
+    lines.push("Headlights: " + LABELS.lights[$("q-lights").value]);
+    lines.push("Town: " + val("q-town"));
+    lines.push("Collection and return: " + ($("q-collect").checked ? "Yes please" : "No, I’ll drop it off"));
+    if (val("q-notes")) lines.push("Notes: " + val("q-notes"));
+    lines.push("", "I’ll send a photo of my V5C next.");
+    return lines.join("\n");
+  }
+
+  $("quote-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var err = $("q-error");
+    REQUIRED.forEach(function (r) { $(r[0]).removeAttribute("aria-invalid"); });
+    $("q-email").removeAttribute("aria-invalid");
+
+    var missing = REQUIRED.filter(function (r) { return !val(r[0]); });
+    var email = val("q-email");
+    var badEmail = email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+    if (missing.length || badEmail) {
+      var text = "";
+      if (missing.length) {
+        missing.forEach(function (r) { $(r[0]).setAttribute("aria-invalid", "true"); });
+        text = "Please add " + joinList(missing.map(function (r) { return r[1]; })) + ".";
+      }
+      if (badEmail) {
+        $("q-email").setAttribute("aria-invalid", "true");
+        text += (text ? " " : "") + "The email address looks incomplete. Check it or leave it blank.";
+      }
+      err.textContent = text;
+      err.hidden = false;
+      $("q-ready").hidden = true;
+      $(missing.length ? missing[0][0] : "q-email").focus();
+      return;
+    }
+
+    err.hidden = true;
+    var msg = buildMessage();
+    $("q-preview").value = msg;
+    $("q-wa").href = "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(msg);
+    $("q-mail").href = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("Quote request: " + val("q-car")) + "&body=" + encodeURIComponent(msg);
+    $("q-copied").hidden = true;
+    $("q-ready").hidden = false;
+    $("q-ready").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
+  });
+
+  $("q-copy").addEventListener("click", function () {
+    var ta = $("q-preview");
+    var note = $("q-copied");
+    function fallback() {
+      ta.focus();
+      ta.select();
+      note.textContent = "Message selected. Press Ctrl+C (or ⌘C) to copy it.";
+      note.hidden = false;
+    }
+    try {
+      navigator.clipboard.writeText(ta.value).then(function () {
+        note.textContent = "Copied. Paste it into WhatsApp or an email.";
+        note.hidden = false;
+      }, fallback);
+    } catch (_) { fallback(); }
+  });
+})();
+</script>
+</body>
+</html>
