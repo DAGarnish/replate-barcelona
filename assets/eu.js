@@ -7,7 +7,7 @@
     whatsappNumber: "34600000000",       // WhatsApp number, international format, digits only
     whatsappDisplay: "+34 600 000 000",  // how the number appears on the page
     email: "hola@replate.example",       // business email
-    serviceFee: 450,                     // fixed fee in euros, before IVA
+    serviceFee: 250,                     // fixed fee in euros, before IVA (EU cars; the UK page has its own)
     collectionFee: 150,                  // collection and return in euros, before IVA
     iva: 0.21
   };
