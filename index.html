@@ -172,7 +172,7 @@
         </div>
         <div class="who__item">
           <span class="chip" aria-hidden="true"><i></i><b>F · NL · D</b></span>
-          <div><h3>Other EU cars</h3><p>French, Dutch, German and other EU plates. No customs and no headlight changes, so it's mainly the ITV, tax and paperwork, and our fee is <b>€250 + IVA</b>. In <a href="/fr/" lang="fr" data-lang="fr">français</a>, <a href="/nl/" lang="nl" data-lang="nl">Nederlands</a> or <a href="/de/" lang="de" data-lang="de">Deutsch</a>.</p></div>
+          <div><h3>Other EU cars</h3><p>French, Dutch, German and other EU plates. No customs and no headlight changes, so it's mainly the ITV, tax and paperwork, and our fee is <b data-bind="euFeeText">€250 + IVA</b>. In <a href="/fr/" lang="fr" data-lang="fr">français</a>, <a href="/nl/" lang="nl" data-lang="nl">Nederlands</a> or <a href="/de/" lang="de" data-lang="de">Deutsch</a>.</p></div>
         </div>
         <div class="who__item">
           <span class="chip chip--other" aria-hidden="true"><i></i><b>CH · USA</b></span>
@@ -223,7 +223,7 @@
               <div class="fee__amt">0–33%</div>
             </div>
             <div class="fee fee--ours">
-              <div class="fee__label">Our fee, fixed<span>Paperwork, workshop coordination, the ITV visit, registration and plate fitting. Collection and return costs <b data-bind="collectText">€150 + IVA</b>.</span></div>
+              <div class="fee__label">Our fee, fixed<span>Paperwork, workshop coordination, the ITV visit, registration and plate fitting. EU-plated cars need less work, so their fee is <b data-bind="euFeeText">€250 + IVA</b>. Collection and return costs <b data-bind="collectText">€150 + IVA</b>.</span></div>
               <div class="fee__amt" data-bind="feeText">€450 + IVA</div>
             </div>
           </div>
@@ -515,6 +515,7 @@
     whatsappDisplay: "+34 600 000 000",  // how the number appears on the page
     email: "hola@replate.example",       // business email
     serviceFee: 450,                     // fixed fee in euros, before IVA
+    euServiceFee: 250,                   // fixed fee for EU-plated cars, before IVA (also set in assets/eu.js)
     collectionFee: 150,                  // collection and return in euros, before IVA
     iva: 0.21
   };
@@ -531,6 +532,7 @@
     whatsappDisplay: CONFIG.whatsappDisplay,
     email: CONFIG.email,
     feeText: "€" + CONFIG.serviceFee + " + IVA",
+    euFeeText: "€" + CONFIG.euServiceFee + " + IVA",
     collectText: "€" + CONFIG.collectionFee + " + IVA"
   };
   document.querySelectorAll("[data-bind]").forEach(function (el) {
@@ -579,7 +581,8 @@
     var iva = 1 + CONFIG.iva;
     function add(label, lo, hi, note) { rows.push({ label: label, lo: lo, hi: hi, note: note || "" }); }
 
-    add("Our fixed fee", CONFIG.serviceFee * iva, CONFIG.serviceFee * iva, "inc. IVA");
+    var fee = s.origin === "eu" ? CONFIG.euServiceFee : CONFIG.serviceFee;
+    add("Our fixed fee", fee * iva, fee * iva, "inc. IVA");
     if (s.collect) add("Collection and return", CONFIG.collectionFee * iva, CONFIG.collectionFee * iva, "inc. IVA");
     add("Import ITV inspection", 96, 120);
     add("DGT registration fee", 99.77, 99.77, "tasa 1.1");
