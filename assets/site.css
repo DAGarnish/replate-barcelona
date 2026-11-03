@@ -329,3 +329,16 @@ input[aria-invalid="true"],textarea[aria-invalid="true"]{border-color:var(--warn
 .route--4::before{right:calc((100% - 72px) / 4 - 21px)}
 @media (max-width:900px){.route--4{grid-template-columns:minmax(0,1fr)}.route--4::before{right:auto}}
 .who a{font-weight:600}
+
+/* Toast shown after the quote form is sent (assets/quote-submit.js) */
+.toast{position:fixed;left:50%;bottom:1rem;z-index:60;width:min(440px,calc(100% - 32px));display:flex;gap:12px;align-items:flex-start;padding:14px 14px 14px 16px;border-radius:12px;border-left:5px solid var(--good);background:var(--surface);color:var(--ink);box-shadow:var(--shadow),0 0 0 1px var(--rule);opacity:0;visibility:hidden;transform:translate(-50%,12px);transition:opacity .25s,transform .25s,visibility .25s}
+.toast.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
+.toast--error{border-left-color:var(--warn)}
+.toast__icon{flex:none;width:1.6rem;height:1.6rem;border-radius:50%;display:grid;place-items:center;background:var(--good);color:#fff;font-weight:700;line-height:1}
+.toast--error .toast__icon{background:var(--warn)}
+.toast__body{flex:1;min-width:0}
+.toast__title{display:block;font-weight:600}
+.toast__text{display:block;color:var(--muted);font-size:var(--fs-small);margin-top:2px}
+.toast__close{flex:none;width:2rem;height:2rem;margin:-4px -4px 0 0;border:0;border-radius:8px;background:transparent;color:var(--muted);font-size:1.3rem;line-height:1;cursor:pointer}
+.toast__close:hover{background:var(--accent-soft);color:var(--ink)}
+@media (prefers-reduced-motion: reduce){.toast{transition:none}}

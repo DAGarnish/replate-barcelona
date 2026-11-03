@@ -28,3 +28,21 @@ Deploy on Vercel
   Go to vercel.com/drop and drop this zip (or the unzipped folder).
   Without an account the deployment expires, so claim the project to keep it,
   then add your own domain under the project's Settings > Domains.
+
+Quote form backend (Vercel functions + Neon)
+  api/quote.js         POST /api/quote: saves the form to Neon and emails RECEIVER_EMAIL
+  api/admin/quotes.js  GET /api/admin/quotes: lists requests (needs ADMIN_PASSWORD)
+  admin/index.html     /admin: password-protected list of requests, with CSV download
+  assets/quote-submit.js  sends the form from every page
+  db/schema.sql        the quote_requests table (create it with: npm run db:setup)
+
+  Environment variables (Vercel > Settings > Environment Variables, and .env.local locally):
+    DATABASE_URL        Neon connection string
+    GMAIL_USER          Gmail account that sends the notifications
+    GMAIL_APP_PASSWORD  Google app password for that account
+    RECEIVER_EMAIL      where notifications are delivered
+    ADMIN_PASSWORD      password for /admin
+  Never commit .env.local (it is in .gitignore).
+
+  Run locally with the functions: npm run dev  (then open http://localhost:8000)
+  python http.server only serves the static pages, so the form cannot send from it.

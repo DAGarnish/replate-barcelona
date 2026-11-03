@@ -471,6 +471,7 @@
             <textarea id="q-notes" rows="3" placeholder="Towbar, modifications, a date you need it done by"></textarea>
           </div>
         </div>
+        <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label for="q-website">Website</label><input id="q-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         <p class="error" id="q-error" role="alert" hidden></p>
         <div><button class="btn btn--primary" type="submit">Prepare my quote request</button></div>
 
@@ -732,6 +733,11 @@
     $("q-copied").hidden = true;
     $("q-ready").hidden = false;
     $("q-ready").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
+    if (window.replateSendQuote) window.replateSendQuote({
+      name: val("q-name"), phone: val("q-phone"), email: val("q-email"), town: val("q-town"), car: val("q-car"),
+      origin: $("q-origin").value, co2: val("q-co2"), moving: $("q-moving").value, lights: $("q-lights").value,
+      collect: $("q-collect").checked, notes: val("q-notes"), message: msg
+    });
   });
 
   $("q-copy").addEventListener("click", function () {
@@ -759,6 +765,7 @@ function t(){b.classList.toggle("show",window.scrollY>600)}
 window.addEventListener("scroll",t,{passive:true});t();
 b.addEventListener("click",function(){window.scrollTo({top:0})});})();
 </script>
+<script src="/assets/quote-submit.js"></script>
 <script src="/assets/lang.js"></script>
 </body>
 </html>

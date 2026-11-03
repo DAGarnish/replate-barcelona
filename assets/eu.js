@@ -190,6 +190,11 @@
     $("q-copied").hidden = true;
     $("q-ready").hidden = false;
     $("q-ready").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
+    if (window.replateSendQuote) window.replateSendQuote({
+      name: val("q-name"), phone: val("q-phone"), email: val("q-email"), town: val("q-town"), car: val("q-car"),
+      origin: "eu", co2: val("q-co2"), moving: $("q-moving").value, lights: "ok",
+      collect: $("q-collect").checked, notes: val("q-notes"), message: msg
+    });
   });
 
   $("q-copy").addEventListener("click", function () {

@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Quote requests · Replate Barcelona</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<style>
+  :root { --bg:#f6f5f2; --card:#fff; --ink:#1b1b1b; --muted:#666; --line:#ddd; --accent:#c8102e; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#141414; --card:#1e1e1e; --ink:#eee; --muted:#9a9a9a; --line:#333; } }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.45 system-ui, sans-serif; }
+  .wrap { max-width:1200px; margin:0 auto; padding:24px 16px; }
+  h1 { font-size:1.5rem; margin:0 0 16px; }
+  form.login { display:flex; gap:8px; flex-wrap:wrap; max-width:420px; }
+  input { flex:1; padding:10px 12px; border:1px solid var(--line); border-radius:8px; background:var(--card); color:var(--ink); font:inherit; }
+  button { padding:10px 16px; border:0; border-radius:8px; background:var(--accent); color:#fff; font:inherit; cursor:pointer; }
+  button.ghost { background:transparent; color:var(--ink); border:1px solid var(--line); }
+  .bar { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:16px; }
+  .bar .count { color:var(--muted); margin-right:auto; }
+  .err { color:var(--accent); }
+  .table { overflow-x:auto; background:var(--card); border:1px solid var(--line); border-radius:10px; }
+  table { border-collapse:collapse; width:100%; min-width:900px; }
+  th, td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top; }
+  th { font-size:.8rem; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); }
+  td.notes { max-width:280px; white-space:pre-wrap; }
+  a { color:inherit; }
+  .muted { color:var(--muted); font-size:.85rem; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Quote requests</h1>
+
+  <form class="login" id="login">
+    <input type="password" id="pw" placeholder="Admin password" autocomplete="current-password" required>
+    <button type="submit">Sign in</button>
+  </form>
+  <p class="err" id="err" hidden></p>
+
+  <div id="list" hidden>
+    <div class="bar">
+      <span class="count" id="count"></span>
+      <button class="ghost" type="button" id="csv">Download CSV</button>
+      <button class="ghost" type="button" id="refresh">Refresh</button>
+      <button class="ghost" type="button" id="logout">Sign out</button>
+    </div>
+    <div class="table">
+      <table>
+        <thead><tr><th>#</th><th>Received</th><th>Name</th><th>Contact</th><th>Car</th><th>Town</th><th>Details</th><th>Notes</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<script>
+(function () {
+  var KEY = "replate-admin";
+  var rows = [];
+  function $(id) { return document.getElementById(id); }
+  function getPw() { try { return sessionStorage.getItem(KEY) || ""; } catch (_) { return ""; } }
+  function setPw(v) { try { v ? sessionStorage.setItem(KEY, v) : sessionStorage.removeItem(KEY); } catch (_) {} }
+  var pw = getPw();
+
+  function cell(tr, parts, cls) {
+    var td = document.createElement("td");
+    if (cls) td.className = cls;
+    parts.forEach(function (p, i) {
+      if (i) td.appendChild(document.createElement("br"));
+      if (p && p.href) { var a = document.createElement("a"); a.href = p.href; a.textContent = p.text; td.appendChild(a); }
+      else if (p && p.muted) { var s = document.createElement("span"); s.className = "muted"; s.textContent = p.muted; td.appendChild(s); }
+      else td.appendChild(document.createTextNode(p == null ? "" : String(p)));
+    });
+    tr.appendChild(td);
+  }
+
+  function render() {
+    var tbody = $("rows");
+    tbody.textContent = "";
+    $("count").textContent = rows.length + (rows.length === 1 ? " request" : " requests");
+    rows.forEach(function (r) {
+      var tr = document.createElement("tr");
+      cell(tr, [r.id, { muted: r.page.toUpperCase() + (r.email_sent ? "" : " · email not sent") }]);
+      cell(tr, [new Date(r.created_at).toLocaleString("en-GB", { dateStyle: "medium", timeStyle: "short" })]);
+      cell(tr, [r.name]);
+      var contact = [{ href: "https://wa.me/" + r.phone.replace(/\D/g, ""), text: r.phone }];
+      if (r.email) contact.push({ href: "mailto:" + r.email, text: r.email });
+      cell(tr, contact);
+      cell(tr, [r.car, { muted: [r.origin, r.co2 ? r.co2 + " g/km" : ""].filter(Boolean).join(" · ") }]);
+      cell(tr, [r.town]);
+      cell(tr, [{ muted: [r.moving, r.lights && "lights: " + r.lights, r.collect ? "collect" : "drop-off"].filter(Boolean).join(" · ") }]);
+      cell(tr, [r.notes || ""], "notes");
+      tbody.appendChild(tr);
+    });
+  }
+
+  function load() {
+    $("err").hidden = true;
+    fetch("/api/admin/quotes", { headers: { Authorization: "Bearer " + pw } })
+      .then(function (r) { return r.json().then(function (j) { return { status: r.status, j: j }; }); })
+      .then(function (res) {
+        if (res.status === 401) { setPw(""); pw = ""; showLogin("Wrong password."); return; }
+        if (!res.j.ok) throw new Error(res.j.error);
+        rows = res.j.rows;
+        $("login").hidden = true;
+        $("list").hidden = false;
+        render();
+      })
+      .catch(function (e) { $("err").textContent = "Couldn't load requests: " + e.message; $("err").hidden = false; });
+  }
+
+  function showLogin(msg) {
+    $("list").hidden = true;
+    $("login").hidden = false;
+    if (msg) { $("err").textContent = msg; $("err").hidden = false; }
+    $("pw").focus();
+  }
+
+  $("login").addEventListener("submit", function (e) {
+    e.preventDefault();
+    pw = $("pw").value;
+    setPw(pw);
+    $("pw").value = "";
+    load();
+  });
+  $("refresh").addEventListener("click", load);
+  $("logout").addEventListener("click", function () { setPw(""); pw = ""; rows = []; showLogin(); });
+  $("csv").addEventListener("click", function () {
+    var cols = ["id", "created_at", "page", "name", "phone", "email", "town", "car", "origin", "co2", "moving", "lights", "collect", "notes", "email_sent"];
+    var esc = function (v) { v = v == null ? "" : String(v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+    var csv = [cols.join(",")].concat(rows.map(function (r) { return cols.map(function (c) { return esc(r[c]); }).join(","); })).join("\n");
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob([csv], { type: "text/csv" }));
+    a.download = "quote-requests.csv";
+    a.click();
+  });
+
+  if (pw) load(); else showLogin();
+})();
+</script>
+</body>
+</html>
