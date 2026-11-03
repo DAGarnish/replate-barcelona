@@ -1,6 +1,5 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true,
   "redirects": [
     {
       "source": "/",
@@ -22,6 +21,21 @@
       "missing": [{ "type": "cookie", "key": "lang" }],
       "destination": "/de/",
       "permanent": false
+    },
+    {
+      "source": "/fr",
+      "destination": "/fr/",
+      "permanent": true
+    },
+    {
+      "source": "/nl",
+      "destination": "/nl/",
+      "permanent": true
+    },
+    {
+      "source": "/de",
+      "destination": "/de/",
+      "permanent": true
     },
     {
       "source": "/:path*",

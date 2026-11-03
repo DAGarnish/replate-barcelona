@@ -6,7 +6,8 @@ Files
   assets/site.css    styles shared by every page
   assets/eu.js       estimator and quote form for the fr/nl/de pages
   assets/lang.js     remembers a language the visitor picks
-  vercel.json        country redirect, one URL per page (/fr/ not /fr or /fr/index.html),
+  vercel.json        country redirect, one URL per page (/fr/ not /fr or /fr/index.html; no global
+                     trailingSlash, which would redirect /api/quote),
                      and the old vercel.app address redirected to the domain
   favicon.svg        the browser tab icon; apple-touch-icon.png is the phone home-screen icon
   assets/og/         share images (1200x630) shown when a page is posted on WhatsApp, LinkedIn etc.
