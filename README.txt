@@ -6,8 +6,12 @@ Files
   assets/site.css    styles shared by every page
   assets/eu.js       estimator and quote form for the fr/nl/de pages
   assets/lang.js     remembers a language the visitor picks
-  vercel.json        sends visitors in France, the Netherlands and Germany from / to their page
-  favicon.svg        the browser tab icon
+  vercel.json        country redirect, one URL per page (/fr/ not /fr or /fr/index.html),
+                     and the old vercel.app address redirected to the domain
+  favicon.svg        the browser tab icon; apple-touch-icon.png is the phone home-screen icon
+  assets/og/         share images (1200x630) shown when a page is posted on WhatsApp, LinkedIn etc.
+  robots.txt         lets search engines crawl everything and points them to the sitemap
+  sitemap.xml        the four pages, with their language versions
 
 Country redirect
   Visitors whose IP is in FR, NL or DE are sent from / to /fr/, /nl/ or /de/.
@@ -24,10 +28,17 @@ Before going live
     collectionFee     collection and return in euros before IVA
   The placeholders (+34 600 000 000 and hola@replate.example) do not reach anyone.
 
-Deploy on Vercel
-  Go to vercel.com/drop and drop this zip (or the unzipped folder).
-  Without an account the deployment expires, so claim the project to keep it,
-  then add your own domain under the project's Settings > Domains.
+SEO
+  Each page's title, description, canonical, language links (hreflang), share
+  tags and structured data (JSON-LD, including the FAQ) sit between
+  <!-- seo:start --> and <!-- seo:end --> in its <head>.
+  Full URLs use https://replatebarcelona.com. If the main domain changes, replace
+  it in all four pages, sitemap.xml, robots.txt and vercel.json.
+
+Deploy
+  Hosted on Vercel (project replate-barcelona-site), deployed automatically on
+  every push to main on GitHub. Live at https://replatebarcelona.com, with www
+  redirecting to it (set in Vercel > Settings > Domains). DNS is at Cloudflare.
 
 Quote form backend (Vercel functions + Neon)
   api/quote.js         POST /api/quote: saves the form to Neon and emails RECEIVER_EMAIL

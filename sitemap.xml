@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://replatebarcelona.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://replatebarcelona.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://replatebarcelona.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://replatebarcelona.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://replatebarcelona.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://replatebarcelona.com/"/>
+  </url>
+  <url>
+    <loc>https://replatebarcelona.com/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://replatebarcelona.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://replatebarcelona.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://replatebarcelona.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://replatebarcelona.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://replatebarcelona.com/"/>
+  </url>
+  <url>
+    <loc>https://replatebarcelona.com/nl/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://replatebarcelona.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://replatebarcelona.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://replatebarcelona.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://replatebarcelona.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://replatebarcelona.com/"/>
+  </url>
+  <url>
+    <loc>https://replatebarcelona.com/de/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://replatebarcelona.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://replatebarcelona.com/fr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://replatebarcelona.com/nl/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://replatebarcelona.com/de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://replatebarcelona.com/"/>
+  </url>
+</urlset>

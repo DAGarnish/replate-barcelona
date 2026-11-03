@@ -1,4 +1,6 @@
 {
+  "cleanUrls": true,
+  "trailingSlash": true,
   "redirects": [
     {
       "source": "/",
@@ -20,6 +22,12 @@
       "missing": [{ "type": "cookie", "key": "lang" }],
       "destination": "/de/",
       "permanent": false
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "replate-barcelona-site.vercel.app" }],
+      "destination": "https://replatebarcelona.com/:path*",
+      "permanent": true
     }
   ]
 }
