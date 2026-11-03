@@ -227,7 +227,7 @@ async function sendEmail(id, q) {
   ].filter(Boolean);
 
   await transporter.sendMail({
-    from: `"Replate Barcelona website" <${process.env.GMAIL_USER}>`,
+    from: `"Replate Barcelona" <${process.env.GMAIL_USER}>`,
     to: process.env.RECEIVER_EMAIL,
     replyTo: q.email || undefined,
     subject: `New quote request #${id}: ${q.car} · ${q.town}`,
