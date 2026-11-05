@@ -22,11 +22,9 @@ Before going live
   Open index.html, search for "Edit these to go live" and set the values below.
   Set the same values in assets/eu.js (the fr/nl/de pages read theirs from there):
     whatsappNumber    your WhatsApp number, country code and digits only, e.g. 34612345678
-    whatsappDisplay   the number as it should appear, e.g. +34 612 345 678
-    email             your business email
     serviceFee        your fixed fee in euros before IVA
     collectionFee     collection and return in euros before IVA
-  The placeholders (+34 600 000 000 and hola@replate.example) do not reach anyone.
+  The number is never shown on the page: visitors get the quote form and a "Message us on WhatsApp" link.
 
 SEO
   Each page's title, description, canonical, language links (hreflang), share

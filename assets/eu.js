@@ -4,9 +4,7 @@
   // ---- Keep these in step with CONFIG in /index.html ----
   var CONFIG = {
     brand: "Replate Barcelona",
-    whatsappNumber: "34600000000",       // WhatsApp number, international format, digits only
-    whatsappDisplay: "+34 600 000 000",  // how the number appears on the page
-    email: "hola@replate.example",       // business email
+    whatsappNumber: "34603904089",       // WhatsApp number, international format, digits only
     serviceFee: 250,                     // fixed fee in euros, before IVA (EU cars; the UK page has its own)
     collectionFee: 150,                  // collection and return in euros, before IVA
     iva: 0.21
@@ -25,8 +23,6 @@
 
   // Contact details and fees from CONFIG
   var binds = {
-    whatsappDisplay: CONFIG.whatsappDisplay,
-    email: CONFIG.email,
     feeText: fill(T.plusIva, money(CONFIG.serviceFee)),
     collectText: fill(T.plusIva, money(CONFIG.collectionFee))
   };
@@ -37,7 +33,6 @@
   document.querySelectorAll("[data-link]").forEach(function (el) {
     var kind = el.getAttribute("data-link");
     if (kind === "whatsapp") el.href = "https://wa.me/" + CONFIG.whatsappNumber;
-    if (kind === "email") el.href = "mailto:" + CONFIG.email;
   });
 
   // ---- Estimator ----
@@ -184,10 +179,7 @@
 
     err.hidden = true;
     var msg = buildMessage();
-    $("q-preview").value = msg;
     $("q-wa").href = "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(msg);
-    $("q-mail").href = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("Quote request (" + P.countryEn + "): " + val("q-car")) + "&body=" + encodeURIComponent(msg);
-    $("q-copied").hidden = true;
     $("q-ready").hidden = false;
     $("q-ready").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
     if (window.replateSendQuote) window.replateSendQuote({
@@ -195,23 +187,6 @@
       origin: "eu", co2: val("q-co2"), moving: $("q-moving").value, lights: "ok",
       collect: $("q-collect").checked, notes: val("q-notes"), message: msg
     });
-  });
-
-  $("q-copy").addEventListener("click", function () {
-    var ta = $("q-preview");
-    var note = $("q-copied");
-    function fallback() {
-      ta.focus();
-      ta.select();
-      note.textContent = T.copyFallback;
-      note.hidden = false;
-    }
-    try {
-      navigator.clipboard.writeText(ta.value).then(function () {
-        note.textContent = T.copied;
-        note.hidden = false;
-      }, fallback);
-    } catch (_) { fallback(); }
   });
 
   // ---- Back to top ----

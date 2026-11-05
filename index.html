@@ -281,7 +281,7 @@
         <li>
           <span class="route__num">1</span>
           <h3>Send your V5C</h3>
-          <p>WhatsApp or email a photo of your logbook and tell us where the car is. We reply with a fixed, itemised quote within one working day.</p>
+          <p>WhatsApp us a photo of your logbook and tell us where the car is. We reply with a fixed, itemised quote within one working day.</p>
         </li>
         <li>
           <span class="route__num">2</span>
@@ -557,8 +557,7 @@
         <h2 id="quote-h">Tell us about the car.</h2>
         <p class="lead">We'll reply within one working day with every cost itemised. After you send this, WhatsApp us a photo of your V5C so we can confirm the details.</p>
         <div class="contact-lines">
-          <div class="contact-line"><span>WhatsApp</span><a data-bind="whatsappDisplay" data-link="whatsapp" href="https://wa.me/34600000000" target="_blank" rel="noopener">+34 600 000 000</a></div>
-          <div class="contact-line"><span>Email</span><a data-bind="email" data-link="email" href="mailto:hola@replate.example">hola@replate.example</a></div>
+          <div class="contact-line"><span>WhatsApp</span><a data-link="whatsapp" href="https://wa.me/34603904089" target="_blank" rel="noopener">Message us on WhatsApp</a></div>
           <div class="contact-line"><span>Area</span><b>Barcelona, the Garraf, the Penedès and all of Catalonia</b></div>
         </div>
       </div>
@@ -626,19 +625,14 @@
         </div>
         <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label for="q-website">Website</label><input id="q-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
         <p class="error" id="q-error" role="alert" hidden></p>
-        <div><button class="btn btn--primary" type="submit">Prepare my quote request</button></div>
+        <div><button class="btn btn--primary" type="submit">Send my quote request</button></div>
 
         <div class="ready" id="q-ready" hidden>
           <h3>Your quote request is ready</h3>
-          <p>Send it to us on WhatsApp or by email. You can also copy it and send it your own way.</p>
+          <p>You can also send it to us on WhatsApp, and we’ll reply there.</p>
           <div class="ready__actions">
             <a class="btn btn--primary" id="q-wa" href="https://wa.me/" target="_blank" rel="noopener">Open WhatsApp with this message</a>
-            <a class="btn btn--ghost" id="q-mail" href="mailto:">Email this message</a>
-            <button class="btn btn--ghost" type="button" id="q-copy">Copy message</button>
           </div>
-          <label class="hint" for="q-preview">Your message</label>
-          <textarea id="q-preview" rows="10" readonly></textarea>
-          <p class="hint" id="q-copied" role="status" hidden></p>
         </div>
       </form>
     </div>
@@ -653,7 +647,7 @@
       <span>UK and foreign cars onto Spanish plates · Barcelona and all of Catalonia · English · Español</span>
     </div>
     <div class="row">
-      <span>WhatsApp <a data-bind="whatsappDisplay" data-link="whatsapp" href="https://wa.me/34600000000" target="_blank" rel="noopener">+34 600 000 000</a> · <a data-bind="email" data-link="email" href="mailto:hola@replate.example">hola@replate.example</a></span>
+      <span><a data-link="whatsapp" href="https://wa.me/34603904089" target="_blank" rel="noopener">Message us on WhatsApp</a></span>
       <span>© 2026 Replate Barcelona</span>
     </div>
     <p>Fees and tax rates on this page are a guide based on 2026 figures for Catalonia. Your fixed quote confirms the exact amounts for your car.</p>
@@ -665,9 +659,7 @@
   // ---- Edit these to go live ----
   var CONFIG = {
     brand: "Replate Barcelona",
-    whatsappNumber: "34600000000",       // WhatsApp number, international format, digits only
-    whatsappDisplay: "+34 600 000 000",  // how the number appears on the page
-    email: "hola@replate.example",       // business email
+    whatsappNumber: "34603904089",       // WhatsApp number, international format, digits only
     serviceFee: 450,                     // fixed fee in euros, before IVA
     euServiceFee: 250,                   // fixed fee for EU-plated cars, before IVA (also set in assets/eu.js)
     collectionFee: 150,                  // collection and return in euros, before IVA
@@ -683,8 +675,6 @@
 
   // Contact details and fees from CONFIG
   var binds = {
-    whatsappDisplay: CONFIG.whatsappDisplay,
-    email: CONFIG.email,
     feeText: "€" + CONFIG.serviceFee + " + IVA",
     euFeeText: "€" + CONFIG.euServiceFee + " + IVA",
     collectText: "€" + CONFIG.collectionFee + " + IVA"
@@ -696,7 +686,6 @@
   document.querySelectorAll("[data-link]").forEach(function (el) {
     var kind = el.getAttribute("data-link");
     if (kind === "whatsapp") el.href = "https://wa.me/" + CONFIG.whatsappNumber;
-    if (kind === "email") el.href = "mailto:" + CONFIG.email;
   });
 
   // ---- Estimator ----
@@ -880,10 +869,7 @@
 
     err.hidden = true;
     var msg = buildMessage();
-    $("q-preview").value = msg;
     $("q-wa").href = "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(msg);
-    $("q-mail").href = "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("Quote request: " + val("q-car")) + "&body=" + encodeURIComponent(msg);
-    $("q-copied").hidden = true;
     $("q-ready").hidden = false;
     $("q-ready").scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "nearest" });
     if (window.replateSendQuote) window.replateSendQuote({
@@ -891,23 +877,6 @@
       origin: $("q-origin").value, co2: val("q-co2"), moving: $("q-moving").value, lights: $("q-lights").value,
       collect: $("q-collect").checked, notes: val("q-notes"), message: msg
     });
-  });
-
-  $("q-copy").addEventListener("click", function () {
-    var ta = $("q-preview");
-    var note = $("q-copied");
-    function fallback() {
-      ta.focus();
-      ta.select();
-      note.textContent = "Message selected. Press Ctrl+C (or ⌘C) to copy it.";
-      note.hidden = false;
-    }
-    try {
-      navigator.clipboard.writeText(ta.value).then(function () {
-        note.textContent = "Copied. Paste it into WhatsApp or an email.";
-        note.hidden = false;
-      }, fallback);
-    } catch (_) { fallback(); }
   });
 })();
 </script>
